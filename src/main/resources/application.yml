@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: file-upload-download-demo-hbk   #it is used by spring cloud project like eureka
+  h2:
+    console:
+      enabled: true   #H2-InMemory DB-console --> http://localhost:8080/h2-console (default) here I named as http://localhost:8080/h2
+      path: /h2
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none   # in production applications we need to keep this as "none"
+  datasource:
+    url: jdbc:h2:mem:testdb   # here testdb is name of database which is default
+    driver-class-name: org.h2.Driver
+    username: ENC(jIYy9vNOn/pB7kegCKfmpQP66J2xCJPnFVJuz9uWHENBTxmjhmRBD61lMapnUPVY)   # encrypted username (sa)
+    password: ENC(GQA+F5Nf8hcsZT2Y2nnVydYtrA2mTdh9wdm3FkDA5lkmk6ba55r1dOLqiEoXUHyf)   # encrypted password (rootuser)
+
+jasypt:
+  encryptor:
+    password: hbk   # secrete key for encryption and decryption. this is default property
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs      # this is default url, we can customize if we want
+  swagger-ui:
+    path: /swagger-ui.html  # this is default url, we can customize if we want
