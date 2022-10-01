@@ -11,7 +11,7 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: none   # in production applications we need to keep this as "none"
+      ddl-auto: update   # in production applications we need to keep this as "none"
   datasource:
     url: jdbc:h2:mem:testdb   # here testdb is name of database which is default
     driver-class-name: org.h2.Driver
